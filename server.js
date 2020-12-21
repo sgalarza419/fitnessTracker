@@ -18,6 +18,7 @@ mongoss.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness", { useN
 
 //routes
 app.use(require("./routes/api.js"));
+app.use(require("./routes/htmlRoutes"));
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
