@@ -8,12 +8,19 @@ const app = express();
 
 app.use(logger("dev"));
 
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({
+    extended: true
+}));
 app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoss.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness", { useNewUrlParser: true, useFindAndModify: false});
+mongoss.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness_tracker", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+});
 
 
 //routes
