@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 // set up variable PORT
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 3000;
 //assign express() to variable 'app'
 const app = express();
 
@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness_tracker
 
 
 //routes
-app.use(require("./routes/api.js"));
+app.use(require("./routes/apiRoutes.js"));
 app.use(require("./routes/htmlRoutes.js"));
 
 app.listen(PORT, () => {
