@@ -6,11 +6,11 @@ const workoutSchema = new Schema({
         type:Date,
         default: Date.now
     },
-    excercises: [{
+    exercises: [{
         type: {
             type: String,
             trim: true,
-            require: "Enter ane excercise type"
+            require: "Enter an excercise type"
         },
         name: {
             type: String,
